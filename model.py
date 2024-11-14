@@ -47,7 +47,6 @@ print('Classification Report:')
 print(report)
 print('Confusion Matrix:')
 print(conf_matrix)
-
 # Save the trained model to a file
 with open('stroke_model.pkl', 'wb') as file:
     pickle.dump(model, file)
