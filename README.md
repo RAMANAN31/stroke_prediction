@@ -1,1 +1,1 @@
-license.md
+LICENSE
