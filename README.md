@@ -1,4 +1,4 @@
-# Your Project Name
+# stroke prediction
 
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 
