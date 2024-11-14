@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+    <style>
+        /* Global reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #4ca1af, #c4e0e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+            width: 90%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .form-field {
+            flex: 1 1 45%;
+            min-width: 200px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #dcdde1;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            margin-top: 5px;
+        }
+
+        input[type="number"]:focus,
+        input[type="text"]:focus,
+        select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Stroke Prediction</h2>
+        <form method="POST" action="/predict">
+            <div class="form-field">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required>
+            </div>
+
+            <div class="form-field">
+                <label for="hypertension">Hypertension:</label>
+                <select id="hypertension" name="hypertension">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="heart_disease">Heart Disease:</label>
+                <select id="heart_disease" name="heart_disease">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="avg_glucose_level">Average Glucose Level:</label>
+                <input type="text" id="avg_glucose_level" name="avg_glucose_level" placeholder="e.g., 85.5" required>
+            </div>
+
+            <div class="form-field">
+                <label for="bmi">BMI:</label>
+                <input type="text" id="bmi" name="bmi" placeholder="e.g., 24.5" required>
+            </div>
+
+            <div class="form-field">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="ever_married">Ever Married:</label>
+                <select id="ever_married" name="ever_married">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="work_type">Work Type:</label>
+                <select id="work_type" name="work_type">
+                    <option value="Private">Private</option>
+                    <option value="Self-employed">Self-employed</option>
+                    <option value="Children">Children</option>
+                    <option value="Govt_job">Govt Job</option>
+                    <option value="Never_worked">Never worked</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="Residence_type">Residence Type:</label>
+                <select id="Residence_type" name="Residence_type">
+                    <option value="Urban">Urban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="smoking_status">Smoking Status:</label>
+                <select id="smoking_status" name="smoking_status">
+                    <option value="never smoked">Never smoked</option>
+                    <option value="formerly smoked">Formerly smoked</option>
+                    <option value="smokes">Smokes</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+        <div class="footer">Powered by AI Stroke Prediction</div>
+    </div>
+</body>
+
+</html>
