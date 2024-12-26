@@ -148,11 +148,12 @@ def predict():
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-'''   
+'''if __name__ == '__main__':
+    app.run(debug=True)'''
+
 if __name__ == "__main__":
-    app.run()pip freeze > requirements.txt'''
+    app.run()
+
 
 
 if __name__ == "__main__":
